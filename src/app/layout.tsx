@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import LiquidSideNav from "../components/LiquidNavBar";
+import Footer from "../components/Footer";
 
 const montserrat = Montserrat({
   //weight: ["400", "700", "900"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <LiquidSideNav />
         {children}
+        <Footer />
       </body>
     </html>
   );
