@@ -32,9 +32,9 @@ const LiquidSideNav = () => {
 
 const Nav = ({ isOpen, setIsOpen }) => {
   return (
-    <div className="bg-white z-50">
+    <div className="bg-re z-50">
       <motion.nav
-        className="fixed top-0 bottom-0 w-screen bg-white"
+        className="fixed top-0 bottom-0 w-screen bg-white dark:bg-indigo-900"
         animate={isOpen ? "open" : "closed"}
         variants={navVariants}
         initial="closed"
@@ -69,7 +69,7 @@ const NavLink = ({ text, href, setIsOpen }) => {
   return (
     <Link href={href}>
       <motion.div
-        className="inline-block z-10 text-slate-800 w-fit font-black text-7xl hover:text-indigo-500 transition-colors"
+        className="inline-block z-10 text-slate-800 dark:text-slate-100 w-fit font-black text-7xl hover:text-indigo-500 transition-colors"
         variants={navLinkVariants}
         transition={{
           type: "spring",
