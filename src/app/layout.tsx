@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import LiquidSideNav from "../components/LiquidNavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  //weight: ["400", "700", "900"],
+  //style: ["normal", "italic"],
+  subsets: ["latin"],
+  //display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "S3D8 Des&Dev",
+  title: "Sergio Valbuena",
   description: "portfolio of a web developer, product designer, and artist",
 };
 
@@ -16,7 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={montserrat.className}>
+        <LiquidSideNav />
+        {children}
+      </body>
     </html>
   );
 }
