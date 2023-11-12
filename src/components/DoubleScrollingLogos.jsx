@@ -23,7 +23,6 @@ import {
   SiBlender,
   SiAdobeillustrator,
 } from "react-icons/si";
-import GradientShadowButton from "./GradientShadowButton";
 
 const DoubleScrollingLogos = () => {
   return (
