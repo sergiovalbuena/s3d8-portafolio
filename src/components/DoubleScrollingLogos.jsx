@@ -26,11 +26,12 @@ import {
 
 const DoubleScrollingLogos = () => {
   return (
-    <section className="bg-indigo-500 py-4 pt-8 px-4">
+    <section className="bg-indigo-500 py-12 px-4">
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
         <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
-          Grow faster with our
-          <span className="text-slate-100"> all in one solution</span>
+          Some of the tools
+          <br />
+          <span className="text-slate-300"> I 🫶🏼 love to use</span>
         </h2>
         <motion.button
           whileHover={{ scale: 1.05 }}
