@@ -28,7 +28,15 @@ function SocialLink({ icon: Icon, ...props }) {
 
 const WaterDropHero = () => {
   const dragProgress = useMotionValue(0);
-  const [order, setOrder] = useState(["front", "middle", "back"]);
+  const [order, setOrder] = useState([
+    "front",
+    "middle",
+    "back",
+    "fourth",
+    "fifth",
+    "sixth",
+  ]);
+
   const [dragging, setDragging] = useState(false);
 
   const handleDragEnd = () => {
@@ -58,9 +66,10 @@ const WaterDropHero = () => {
 
     return () => clearInterval(intervalRef);
   }, []);
+
   return (
     <section className="text-slat-100 overflow-hidden bg-slate-900 px-8 py-24 md:px-12 md:py-32">
-      <div className="flex flex-col md:flex-row xl:flex-row relative mx-auto max-w-5xl gap-8">
+      <div className="flex flex-col md:flex-row xl:flex-row relative mx-auto max-w-7xl gap-8">
         <div className="pointer-events-none relative z-10">
           <Reveal>
             <h1 className="pointer-events-auto text-5xl font-black text-slate-100 md:text-7xl">
@@ -129,6 +138,7 @@ const WaterDropHero = () => {
           </Reveal>
         </div>
         {/* <DotGrid /> */}
+
         <div className="sm:mt-8">
           <motion.div
             whileTap={{ scale: 0.985 }}
@@ -161,6 +171,36 @@ const WaterDropHero = () => {
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[2]}
+              dragging={dragging}
+              setDragging={setDragging}
+            />
+            <Card
+              imgUrl="/imgs/head-shots/9.jpg"
+              testimonial=""
+              author="q"
+              handleDragEnd={handleDragEnd}
+              dragProgress={dragProgress}
+              position={order[3]}
+              dragging={dragging}
+              setDragging={setDragging}
+            />
+            <Card
+              imgUrl="/imgs/head-shots/9.jpg"
+              testimonial=""
+              author="FADF"
+              handleDragEnd={handleDragEnd}
+              dragProgress={dragProgress}
+              position={order[4]}
+              dragging={dragging}
+              setDragging={setDragging}
+            />
+            <Card
+              imgUrl="/imgs/head-shots/9.jpg"
+              testimonial=""
+              author="fsdf"
+              handleDragEnd={handleDragEnd}
+              dragProgress={dragProgress}
+              position={order[5]}
               dragging={dragging}
               setDragging={setDragging}
             />
@@ -242,10 +282,42 @@ const Card = ({
     handleDragEnd();
   };
 
-  const x = position === "front" ? "0%" : position === "middle" ? "33%" : "66%";
+  const x =
+    position === "front"
+      ? "0%"
+      : position === "middle"
+      ? "33%"
+      : position === "back"
+      ? "66%"
+      : position === "fourth"
+      ? "100%"
+      : position === "fifth"
+      ? "133%"
+      : "166%";
   const rotateZ =
-    position === "front" ? "-6deg" : position === "middle" ? "0deg" : "6deg";
-  const zIndex = position === "front" ? "2" : position === "middle" ? "1" : "0";
+    position === "front"
+      ? "-6deg"
+      : position === "middle"
+      ? "0deg"
+      : position === "back"
+      ? "6deg"
+      : position === "fourth"
+      ? "-6deg"
+      : position === "fifth"
+      ? "0deg"
+      : "6deg";
+  const zIndex =
+    position === "front"
+      ? "2"
+      : position === "middle"
+      ? "1"
+      : position === "back"
+      ? "0"
+      : position === "fourth"
+      ? "-1"
+      : position === "fifth"
+      ? "-2"
+      : "-3";
 
   const draggable = position === "front";
 

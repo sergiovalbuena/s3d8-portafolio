@@ -299,7 +299,7 @@ export default TerminalContact;
 const QUESTIONS = [
   {
     key: "email",
-    text: "Let's start, what's your email? ",
+    text: "Let's start, what's  ",
     postfix: "your email?",
     complete: false,
     value: "",
