@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FiCheckCircle } from "react-icons/fi";
 import { Fragment, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const TerminalContact = () => {
   const containerRef = useRef(null);
@@ -18,13 +19,13 @@ const TerminalContact = () => {
       // }}
       className="px-4 py-12"
     >
-      \{" "}
+      {" "}
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
         <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
           Let&apos;s get in touch
-          <span className="text-indigo-500"> and create a better world </span>
+          <span className="text-indigo-500"> and ship the rocket 🚀 </span>
         </h2>
-        <div className="flex flex-col gap-2">
+        {/* <div className="flex flex-col gap-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -39,14 +40,14 @@ const TerminalContact = () => {
           >
             Email me
           </motion.button>
-        </div>
+        </div> */}
       </div>
       <div
         ref={containerRef}
         onClick={() => {
           inputRef.current?.focus();
         }}
-        className="h-96 bg-slate-950/70 backdrop-blur rounded-lg w-full max-w-3xl mx-auto overflow-y-scroll shadow-xl cursor-text font-mono"
+        className="h-96 dark:bg-slate-950/70 bg-slate-800 backdrop-blur rounded-lg w-full max-w-3xl mx-auto overflow-y-scroll shadow-xl cursor-text font-mono"
       >
         <TerminalHeader />
         <TerminalBody inputRef={inputRef} containerRef={containerRef} />
@@ -61,9 +62,12 @@ const TerminalHeader = () => {
       <div className="w-3 h-3 rounded-full bg-red-500" />
       <div className="w-3 h-3 rounded-full bg-yellow-500" />
       <div className="w-3 h-3 rounded-full bg-green-500" />
-      <span className="text-sm text-slate-200 font-semibold absolute left-[50%] -translate-x-[50%]">
+      <Link
+        href="mailto:sergio@desndev.com"
+        className="text-sm text-slate-200 font-semibold absolute left-[50%] -translate-x-[50%]"
+      >
         sergio@desndev.com
-      </span>
+      </Link>
     </div>
   );
 };
@@ -94,7 +98,7 @@ const TerminalBody = ({ containerRef, inputRef }) => {
   };
 
   return (
-    <div className="p-2 text-slate-100 text-lg">
+    <div className="p-2 text-slate-100 dark:text-slate-100 text-lg">
       <InitialText />
       <PreviousQuestions questions={questions} />
       <CurrentQuestion curQuestion={curQuestion} />
@@ -186,7 +190,7 @@ const Summary = ({ questions, setQuestions }) => {
 
   return (
     <>
-      <p>Beautiful! Here&#39;s what we&#39;ve got:</p>
+      <p>Perfect! Here&#39;s what I&#39;ve got:</p>
       {questions.map((q) => {
         return (
           <p key={q.key}>
@@ -194,11 +198,11 @@ const Summary = ({ questions, setQuestions }) => {
           </p>
         );
       })}
-      <p>Look good?</p>
+      <p>Does it look goo?, ready to send it?</p>
       {complete ? (
         <p className="text-emerald-300">
           <FiCheckCircle className="inline-block mr-2" />
-          <span>Sent! We&#39;ll get back to you ASAP 😎</span>
+          <span>Sent! I&#39;ll get back to you ASAP 😎</span>
         </p>
       ) : (
         <div className="flex gap-2 mt-2">
@@ -295,7 +299,7 @@ export default TerminalContact;
 const QUESTIONS = [
   {
     key: "email",
-    text: "To start, could you give us ",
+    text: "Let's start, what's your email? ",
     postfix: "your email?",
     complete: false,
     value: "",
@@ -310,7 +314,7 @@ const QUESTIONS = [
   {
     key: "description",
     text: "Perfect, and ",
-    postfix: "how can we help you?",
+    postfix: "how can I help you?",
     complete: false,
     value: "",
   },

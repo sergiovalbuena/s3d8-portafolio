@@ -5,21 +5,22 @@ import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const LiquidSideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="fixed top-0 w-full z-20">
-      <div className="h-12 bg-gradient-to-br from-violet-600 to-indigo-600 relative">
+      <div className="h-12  relative">
         <div className="absolute top-0 right-0 flex items-center text-white ">
           {/* <span className="text-sm">Open nav</span>
           <FiArrowRight className="mr-4 ml-2" /> */}
           <motion.button
-            whileHover={{ rotate: "180deg" }}
+            whileHover={{ y: 3 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="text-3xl bg-white text-black hover:text-indigo-500 transition-colors p-4 absolute  top-8 right-8  rounded-full"
+            className="text-3xl shadow-xl bg-white dark:bg-slate-800 dark:text-white dark:shadow-xl dark:shadow-slate-700 text-black hover:text-indigo-500 transition-colors p-4 absolute  top-8 right-8  rounded-full"
           >
             <FiMenu />
           </motion.button>
