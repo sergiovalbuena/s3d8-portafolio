@@ -30,7 +30,7 @@ const BouncyCardsFeatures = () => {
             </div>
           </BounceCard>
         </div>
-        <div className="grid grid-cols-12 gap-4">
+        <div className="mb-4 grid grid-cols-12 gap-4">
           <BounceCard className="col-span-12 md:col-span-8">
             <CardTitle>Des n Dev</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-green-400 to-emerald-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
@@ -48,8 +48,18 @@ const BouncyCardsFeatures = () => {
             </div>
           </BounceCard>
         </div>
+        <motion.div
+          className="grid grid-cols-1 gap-4 mb-10"
+          whileHover={{ scale: 0.95, rotate: "-1deg" }}
+        >
+          <div className=" bottom-0 left-4 right-4 top-32 translate-y-8 rounded-2xl bg-gradient-to-br from-indigo-400 to-purple-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <span className="block text-center font-semibold text-red-50">
+              SOME MORE PROJECTS
+            </span>
+          </div>
+        </motion.div>
 
-        <div className="">
+        {/* <div className="">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -57,7 +67,7 @@ const BouncyCardsFeatures = () => {
           >
             Learn more
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -64,14 +64,18 @@ const WaterDropHero = () => {
         <div className="pointer-events-none relative z-10">
           <Reveal>
             <h1 className="pointer-events-auto text-5xl font-black text-slate-100 md:text-7xl">
-              Hi, I&#39;m Sergio<span className="text-indigo-500">.</span>
+              Hi, {""}
+              <span className="text-4xl">👋🏼</span>
+              <span className="text-6xl">👨🏻‍💻</span> <br />
+              I&#39;m Sergio<span className="text-indigo-500">.</span>
             </h1>
           </Reveal>
           <Reveal>
             <h2 className="pointer-events-auto my-2 text-2xl text-slate-400 md:my-4 md:text-4xl">
-              I&#39;m a{" "}
-              <span className="font-semibold text-indigo-500">
-                Full Stack Developer
+              Interactive Media <span className="font-bold"> Developer </span>{" "}
+              <br />
+              <span className=" text-indigo-500">
+                and Product <span className="font-bold">Designer</span>
               </span>
             </h2>
           </Reveal>
