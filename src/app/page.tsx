@@ -3,7 +3,7 @@ import BouncyCardsFeatures from "../components/BouncyCardsFeatures";
 import ContactForm from "../components/ContactForm";
 import Modal from "../components/Modal";
 import DoubleScrollingLogos from "../components/DoubleScrollingLogos";
-import ThemeToggle from "../components/ThemeToggle";
+import CollapseCard from "../components/CollapseCards";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
 
       <BouncyCardsFeatures />
       <DoubleScrollingLogos />
+      <CollapseCard />
       <Modal />
       <ContactForm />
     </main>

@@ -90,10 +90,15 @@ const WaterDropHero = () => {
           </Reveal>
           <Reveal>
             <p className="pointer-events-auto max-w-xl text-sm text-slate-300 md:text-base">
-              I&#39;ve spent the last 5 years building and scaling software for
-              some pretty cool companies. I also teach people to paint online
-              (incase youve got an empty canvas layin&#39; around 🎨). Let&#39;s
-              connect!
+              I&apos;ve spent years crafting digital wonders and scaling
+              projects for some of the coolest companies in the tech cosmos.
+              Whether it&apos;s weaving intricate code tapestries in ReactJS or
+              sculpting delightful UI experiences in Figma, my journey is a
+              fusion of creativity and precision. When I&apos;m not immersed in
+              the world of IDEs and 3D Modeling, I&apos;m harnessing my inner
+              zen as a yoga instructor, connecting mind and body. Let&apos;s
+              intertwine our skills and create something extraordinary together.
+              Ready to embark on this coding odyssey?
             </p>
           </Reveal>
           <Reveal>
@@ -146,7 +151,7 @@ const WaterDropHero = () => {
           >
             <Card
               imgUrl="/imgs/head-shots/7.jpg"
-              testimonial="I feel like I&#39;ve learned as much from X as I did completing my masters. It&#39;s the first thing I read every morning."
+              testimonial="JavaScript"
               author="Design, UX & Art"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
