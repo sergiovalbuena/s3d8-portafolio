@@ -89,15 +89,17 @@ const WaterDropHero = () => {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto max-w-xl text-sm text-slate-300 md:text-base">
+            <p className="pointer-events-auto max-w-xl text-sm text-slate-400 md:text-base">
               I&apos;ve spent years crafting digital wonders and scaling
-              projects for some of the coolest companies in the tech cosmos.
-              Whether it&apos;s weaving intricate code tapestries in ReactJS or
-              sculpting delightful UI experiences in Figma, my journey is a
-              fusion of creativity and precision. When I&apos;m not immersed in
-              the world of IDEs and 3D Modeling, I&apos;m harnessing my inner
-              zen as a yoga instructor, connecting mind and body. Let&apos;s
-              intertwine our skills and create something extraordinary together.
+              projects for some cool companies. Whether it&apos;s weaving
+              intricate code tapestries in ReactJS or sculpting delightful UI
+              experiences in Figma, my journey is a fusion of creativity and
+              precision. When I&apos;m not immersed in the world of coding and
+              creating, I&apos;m decodign my inner self as a yoga instructor,
+              connecting mind and body. Let&apos;s join our skills and create
+              something extraordinary together.
+            </p>
+            <p className="pointer-events-auto max-w-xl text-md text-slate-200 md:text-base">
               Ready to embark on this coding odyssey?
             </p>
           </Reveal>
@@ -150,9 +152,9 @@ const WaterDropHero = () => {
             className="relative h-[450px] w-[350px]"
           >
             <Card
-              imgUrl="/imgs/head-shots/7.jpg"
+              imgUrl="/logos/js-logo.svg"
               testimonial="JavaScript"
-              author="Design, UX & Art"
+              author="My first coding language"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[0]}
@@ -160,9 +162,9 @@ const WaterDropHero = () => {
               setDragging={setDragging}
             />
             <Card
-              imgUrl="/imgs/head-shots/8.jpg"
-              testimonial="My boss thinks I know what I&#39;m doing. Honestly, I just read this newsletter."
-              author="Code & Problem Solving"
+              imgUrl="/logos/arduino-logo.svg"
+              testimonial="Arduino"
+              author="My first 🤍 touch wih code"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[1]}
@@ -170,9 +172,9 @@ const WaterDropHero = () => {
               setDragging={setDragging}
             />
             <Card
-              imgUrl="/imgs/head-shots/9.jpg"
-              testimonial=""
-              author="Management & Leadership"
+              imgUrl="/logos/figma-logo.svg"
+              testimonial="Figma"
+              author="Design is my fundation"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[2]}
@@ -180,9 +182,9 @@ const WaterDropHero = () => {
               setDragging={setDragging}
             />
             <Card
-              imgUrl="/imgs/head-shots/9.jpg"
-              testimonial=""
-              author="q"
+              imgUrl="/logos/mongo-logo.svg"
+              testimonial="MongoDB"
+              author="My first Database"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[3]}
@@ -190,9 +192,9 @@ const WaterDropHero = () => {
               setDragging={setDragging}
             />
             <Card
-              imgUrl="/imgs/head-shots/9.jpg"
-              testimonial=""
-              author="FADF"
+              imgUrl="/logos/nextjs-logo.svg"
+              testimonial="Next.js"
+              author="my favorite fullstack framework"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[4]}
@@ -200,9 +202,29 @@ const WaterDropHero = () => {
               setDragging={setDragging}
             />
             <Card
-              imgUrl="/imgs/head-shots/9.jpg"
-              testimonial=""
-              author="fsdf"
+              imgUrl="/logos/react-logo.svg"
+              testimonial="react"
+              author="My I can do everything framework"
+              handleDragEnd={handleDragEnd}
+              dragProgress={dragProgress}
+              position={order[5]}
+              dragging={dragging}
+              setDragging={setDragging}
+            />
+            <Card
+              imgUrl="/logos/unity-logo.svg"
+              testimonial="Unity"
+              author="Interactivity is my passion"
+              handleDragEnd={handleDragEnd}
+              dragProgress={dragProgress}
+              position={order[5]}
+              dragging={dragging}
+              setDragging={setDragging}
+            />
+            <Card
+              imgUrl="/logos/swiftui-logo.svg"
+              testimonial="Swift UI"
+              author="My first mobile framework"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[5]}
@@ -356,7 +378,7 @@ const Card = ({
         alt={`Image of ${author}`}
         width={"190"}
         height={"100"}
-        className="pointer-events-none mx-auto h-32 w-32  border-2 border-slate-700 bg-slate-200 object-cover"
+        className="pointer-events-none mx-auto h-42 w-42 object-cover"
       />
       <span className="text-center text-lg italic text-slate-400">
         {testimonial}
