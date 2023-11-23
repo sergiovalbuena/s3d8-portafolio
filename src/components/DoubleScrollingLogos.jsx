@@ -31,7 +31,7 @@ const DoubleScrollingLogos = () => {
         <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
           Some of the tools
           <br />
-          <span className="text-slate-300"> I 🫶🏼 love to use</span>
+          <span className="text-slate-300"> I 🫶🏼 use</span>
         </h2>
         <motion.button
           whileHover={{ scale: 1.05 }}

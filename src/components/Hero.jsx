@@ -29,12 +29,13 @@ function SocialLink({ icon: Icon, ...props }) {
 const WaterDropHero = () => {
   const dragProgress = useMotionValue(0);
   const [order, setOrder] = useState([
-    "front",
-    "middle",
-    "back",
+    "first",
+    "second",
+    "third",
     "fourth",
     "fifth",
     "sixth",
+    "seventh",
   ]);
 
   const [dragging, setDragging] = useState(false);
@@ -99,18 +100,30 @@ const WaterDropHero = () => {
               connecting mind and body. Let&apos;s join our skills and create
               something extraordinary together.
             </p>
-            <p className="pointer-events-auto max-w-xl text-md text-slate-200 md:text-base">
-              Ready to embark on this coding odyssey?
+            <p className="pointer-events-auto max-w-xl  mt-3 text-md text-slate-200 md:text-base">
+              Ready to embark on this code odyssey?
             </p>
           </Reveal>
           <Reveal>
             <div className=" flex gap-8  mt-4 md:mt-6 ">
-              <button className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 ">
+              <Link
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector("#contact")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+                className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 "
+              >
                 Contact me
-              </button>
-              <button className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 ">
+              </Link>
+              <Link
+                href="mailto:jesergio.valbuena@gmail.com "
+                className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 "
+              >
                 Email me
-              </button>
+              </Link>
             </div>
           </Reveal>
 
@@ -181,7 +194,7 @@ const WaterDropHero = () => {
               dragging={dragging}
               setDragging={setDragging}
             />
-            <Card
+            {/* <Card
               imgUrl="/logos/mongo-logo.svg"
               testimonial="MongoDB"
               author="My first Database"
@@ -190,7 +203,7 @@ const WaterDropHero = () => {
               position={order[3]}
               dragging={dragging}
               setDragging={setDragging}
-            />
+            /> */}
             <Card
               imgUrl="/logos/nextjs-logo.svg"
               testimonial="Next.js"
@@ -217,7 +230,7 @@ const WaterDropHero = () => {
               author="Interactivity is my passion"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
-              position={order[5]}
+              position={order[6]}
               dragging={dragging}
               setDragging={setDragging}
             />
@@ -227,7 +240,7 @@ const WaterDropHero = () => {
               author="My first mobile framework"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
-              position={order[5]}
+              position={order[3]}
               dragging={dragging}
               setDragging={setDragging}
             />
@@ -310,44 +323,57 @@ const Card = ({
   };
 
   const x =
-    position === "front"
+    position === "first"
       ? "0%"
-      : position === "middle"
-      ? "33%"
-      : position === "back"
-      ? "66%"
+      : position === "second"
+      ? "12.5%"
+      : position === "third"
+      ? "25%"
       : position === "fourth"
-      ? "100%"
+      ? "37.5%"
       : position === "fifth"
-      ? "133%"
-      : "166%";
+      ? "50%"
+      : position === "sixth"
+      ? "62.5%"
+      : position === "seventh"
+      ? "75%"
+      : "87.5%";
+
   const rotateZ =
-    position === "front"
-      ? "-6deg"
-      : position === "middle"
-      ? "0deg"
-      : position === "back"
-      ? "6deg"
+    position === "first"
+      ? "-7deg"
+      : position === "second"
+      ? "-5deg"
+      : position === "third"
+      ? "-3deg"
       : position === "fourth"
-      ? "-6deg"
+      ? "-1deg"
       : position === "fifth"
-      ? "0deg"
-      : "6deg";
+      ? "1deg"
+      : position === "sixth"
+      ? "3deg"
+      : position === "seventh"
+      ? "5deg"
+      : "7deg";
+
   const zIndex =
-    position === "front"
-      ? "2"
-      : position === "middle"
-      ? "1"
-      : position === "back"
-      ? "0"
+    position === "first"
+      ? "8"
+      : position === "second"
+      ? "7"
+      : position === "third"
+      ? "6"
       : position === "fourth"
-      ? "-1"
+      ? "5"
       : position === "fifth"
-      ? "-2"
-      : "-3";
+      ? "4"
+      : position === "sixth"
+      ? "3"
+      : position === "seventh"
+      ? "2"
+      : "1";
 
-  const draggable = position === "front";
-
+  const draggable = position === "first";
   return (
     <motion.div
       style={{

@@ -14,7 +14,9 @@ export default function Home() {
       <DoubleScrollingLogos />
       <CollapseCard />
       <Modal />
-      <ContactForm />
+      <div id="contact">
+        <ContactForm />
+      </div>
     </main>
   );
 }
