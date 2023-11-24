@@ -26,20 +26,20 @@ import {
 
 const DoubleScrollingLogos = () => {
   return (
-    <section className="bg-indigo-500 py-12 px-4">
+    <section className="bg-slate-900 py-12 px-4">
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
-        <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
+        <h2 className="max-w-lg text-4xl  text-white font-bold md:text-5xl">
           Some of the tools
           <br />
-          <span className="text-slate-300"> I 🫶🏼 use</span>
+          <span className="text-slate-500"> I 🫶🏼 use</span>
         </h2>
-        <motion.button
+        {/* <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="whitespace-nowrap rounded-lg bg-slate-900 px-4 py-2 font-medium text-white shadow-xl transition-colors hover:bg-slate-700"
         >
           See more
-        </motion.button>
+        </motion.button> */}
       </div>
       <div className="flex  overflow-hidden">
         <TranslateWrapper>
@@ -82,14 +82,14 @@ const TranslateWrapper = ({ children, reverse }) => {
 
 const LogoItem = ({ Icon }) => {
   return (
-    <a
-      href="/"
-      rel="nofollow"
-      target="_blank"
-      className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center hover:bg-slate-200 text-black transition-colors"
+    <div
+      //href=""
+      //rel="nofollow"
+      //target="_blank"
+      className="w-16 md:w-24 h-16 md:h-24 flex justify-center items-center hover:bg-slate-200 hover:rounded-md text-slate-500 hover:text-slate-900 transition-colors"
     >
       <Icon className="text-4xl md:text-5xl" />
-    </a>
+    </div>
   );
 };
 

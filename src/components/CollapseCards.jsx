@@ -28,11 +28,11 @@ const CollapseCard = () => {
 
   return (
     <section className="overflow-hidden bg-neutral-100 px-4 py-12">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-8xl px-10">
         <div className="mb-8 flex justify-between gap-4">
           <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl">
-            We&apos;re good.{" "}
-            <span className="text-neutral-400">Here&apos;s why.</span>
+            Code projects{" "}
+            <span className="text-neutral-400">usefull examples</span>
           </h2>
           <div className="flex gap-2">
             <button
