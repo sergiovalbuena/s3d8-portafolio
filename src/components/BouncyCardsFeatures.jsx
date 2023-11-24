@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const BouncyCardsFeatures = () => {
   return (
@@ -15,18 +16,27 @@ const BouncyCardsFeatures = () => {
         <div className="mb-4 grid grid-cols-12 gap-4 ">
           <BounceCard className="col-span-12 md:col-span-4">
             <CardTitle>La Taqueria</CardTitle>
-            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <span className="block text-center font-semibold text-indigo-50">
-                FEATURE DEMO HERE
-              </span>
+            <div className=" absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-3 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              <Image
+                src="/projects/HeaderTaqueria.png"
+                layout="responsive"
+                width={400}
+                height={275}
+                alt=""
+              ></Image>
             </div>
           </BounceCard>
+
           <BounceCard className="col-span-12 md:col-span-8">
             <CardTitle>Kitchen Flow</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-400 to-orange-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <span className="block text-center font-semibold text-orange-50">
-                FEATURE DEMO HERE
-              </span>
+              <Image
+                src="/projects/KitchenFlow_Header.png"
+                layout="responsive"
+                width={400}
+                height={275}
+                alt=""
+              ></Image>
             </div>
           </BounceCard>
         </div>
