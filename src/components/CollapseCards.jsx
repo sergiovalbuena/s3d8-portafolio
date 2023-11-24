@@ -27,8 +27,8 @@ const CollapseCard = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-neutral-100 px-4 py-12">
-      <div className="mx-auto max-w-8xl px-10">
+    <section className="overflow-hidden bg-neutral-200 dark:bg-gray-700 px-4 py-12">
+      <div className="mx-auto max-w-8xl lg:px-10 ">
         <div className="mb-8 flex justify-between gap-4">
           <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl">
             Code projects{" "}
@@ -59,7 +59,15 @@ const CollapseCard = () => {
   );
 };
 
-const Feature = ({ position, index, title, description, Icon }) => {
+const Feature = ({
+  position,
+  index,
+  title,
+  description,
+  Icon,
+  projectLink,
+  repoLink,
+}) => {
   const translateAmt =
     position >= index ? index * 100 : index * 100 - 100 * (index - position);
 
@@ -70,13 +78,32 @@ const Feature = ({ position, index, title, description, Icon }) => {
         ease: "easeInOut",
         duration: 0.35,
       }}
-      className={`relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 ${
-        index % 2 ? "bg-black text-white" : " bg-white"
+      className={`relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 rounded-md transform hover:-translate-y-1 transition-transform ${
+        index % 2
+          ? "bg-black text-white dark:bg-gray-700 dark:border   dark:text-slate-200"
+          : " bg-white dark:bg-gray-900 dark:text-white"
       }`}
     >
-      <Icon className="absolute right-2 top-2 text-7xl opacity-20" />
+      {/* <Icon className="absolute right-2 top-2 text-7xl opacity-20" /> */}
       <h3 className="mb-8 text-3xl font-bold">{title}</h3>
       <p>{description}</p>
+
+      <div className="flex gap-3 justify-end">
+        <button
+          href={projectLink}
+          type="button"
+          className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          View Project
+        </button>
+        <button
+          href={repoLink}
+          type="button"
+          className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+        >
+          GitHub Repo
+        </button>
+      </div>
     </motion.div>
   );
 };
