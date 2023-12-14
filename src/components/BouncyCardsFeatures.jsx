@@ -9,7 +9,7 @@ const BouncyCardsFeatures = () => {
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
         <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
           I&apos;ve worked on
-          <span className="text-slate-400"> these projects</span>
+          <span className="text-indigo-500"> these projects</span>
         </h2>
       </div>
       <div className="max-w-7xl mx-auto">
@@ -17,26 +17,29 @@ const BouncyCardsFeatures = () => {
           <BounceCard className="col-span-12 md:col-span-4">
             <CardTitle>La Taqueria</CardTitle>
             <div className=" absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-3 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <Image
-                src="/projects/HeaderTaqueria.png"
-                layout="responsive"
-                width={400}
-                height={275}
-                alt=""
-              ></Image>
+              <div className="relative w-full h-0 pb-[120%]">
+                <Image
+                  src="/projects/HeaderTaqueria.png"
+                  fill
+                  objectFit="cover"
+                  alt=""
+                />
+              </div>
             </div>
           </BounceCard>
 
           <BounceCard className="col-span-12 md:col-span-8">
             <CardTitle>Kitchen Flow</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-400 to-orange-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <Image
-                src="/projects/KitchenFlow_Header.png"
-                layout="responsive"
-                width={400}
-                height={275}
-                alt=""
-              ></Image>
+              <div className="relative w-full h-0 pb-[50%]">
+                <Image
+                  src="/projects/KitchenFlow_Header.png"
+                  objectFit="cover"
+                  // Make the image display full width
+                  fill
+                  alt=""
+                />
+              </div>
             </div>
           </BounceCard>
         </div>

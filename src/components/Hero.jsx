@@ -101,7 +101,7 @@ const WaterDropHero = () => {
               something extraordinary together.
             </p>
             <p className="pointer-events-auto max-w-xl  mt-3 text-md text-slate-200 md:text-base">
-              Ready to embark on this code odyssey?
+              Ready to embark on this product odyssey?
             </p>
           </Reveal>
           <Reveal>
