@@ -18,12 +18,7 @@ const BouncyCardsFeatures = () => {
             <CardTitle>La Taqueria</CardTitle>
             <div className=" absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-3 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               <div className="relative w-full h-0 pb-[120%]">
-                <Image
-                  src="/projects/HeaderTaqueria.png"
-                  fill
-                  objectFit="cover"
-                  alt=""
-                />
+                <Image src="/projects/HeaderTaqueria.png" fill alt="" />
               </div>
             </div>
           </BounceCard>
@@ -34,7 +29,6 @@ const BouncyCardsFeatures = () => {
               <div className="relative w-full h-0 pb-[50%]">
                 <Image
                   src="/projects/KitchenFlow_Header.png"
-                  objectFit="cover"
                   // Make the image display full width
                   fill
                   alt=""
