@@ -13,8 +13,12 @@ export default function Home() {
         <BouncyCardsFeatures />
       </div>
       <DoubleScrollingLogos />
-      <CollapseCard />
-      <Modal />
+      <div id="code">
+        <CollapseCard />
+      </div>
+      <div id="ui-components">
+        <Modal />
+      </div>
       <div id="contact">
         <ContactForm />
       </div>
