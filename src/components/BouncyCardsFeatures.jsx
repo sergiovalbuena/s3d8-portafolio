@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const BouncyCardsFeatures = () => {
   return (
@@ -14,7 +15,10 @@ const BouncyCardsFeatures = () => {
       </div>
       <div className="max-w-7xl mx-auto">
         <div className="mb-4 grid grid-cols-12 gap-4 ">
-          <BounceCard className="col-span-12 md:col-span-4">
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            href="/projects/taqueria"
+          >
             <CardTitle>La Taqueria</CardTitle>
             <div className=" absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-3 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               <div className="relative w-full h-0 pb-[120%]">
@@ -23,7 +27,10 @@ const BouncyCardsFeatures = () => {
             </div>
           </BounceCard>
 
-          <BounceCard className="col-span-12 md:col-span-8">
+          <BounceCard
+            className="col-span-12 md:col-span-8"
+            href="/projects/taqueria"
+          >
             <CardTitle>Kitchen Flow</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-400 to-orange-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               <div className="relative w-full h-0 pb-[50%]">
@@ -38,20 +45,22 @@ const BouncyCardsFeatures = () => {
           </BounceCard>
         </div>
         <div className="mb-4 grid grid-cols-12 gap-4">
-          <BounceCard className="col-span-12 md:col-span-8">
-            <CardTitle>Des n Dev</CardTitle>
+          <BounceCard
+            className="col-span-12 md:col-span-8"
+            href="/projects/taqueria"
+          >
+            <CardTitle>User Dashboard</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-green-400 to-emerald-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <span className="block text-center font-semibold text-emerald-50">
-                FEATURE DEMO HERE
-              </span>
+              <span className="block text-center font-semibold text-emerald-50"></span>
             </div>
           </BounceCard>
-          <BounceCard className="col-span-12 md:col-span-4">
-            <CardTitle>And finally this</CardTitle>
+          <BounceCard
+            className="col-span-12 md:col-span-4"
+            href="/projects/taqueria"
+          >
+            <CardTitle>Game Dev</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-pink-400 to-red-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <span className="block text-center font-semibold text-red-50">
-                FEATURE DEMO HERE
-              </span>
+              <span className="block text-center font-semibold text-red-50"></span>
             </div>
           </BounceCard>
         </div>
@@ -80,13 +89,13 @@ const BouncyCardsFeatures = () => {
   );
 };
 
-const BounceCard = ({ className, children }) => {
+const BounceCard = ({ className, children, href }) => {
   return (
     <motion.div
       whileHover={{ scale: 0.95, rotate: "-1deg" }}
       className={`group relative min-h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-600 dark:text-slate-200 dark:hover:text-white p-8 ${className}`}
     >
-      {children}
+      <Link href={href}>{children}</Link>
     </motion.div>
   );
 };
@@ -95,8 +104,31 @@ const CardTitle = ({ children }) => {
   return (
     <div className="flex justify-between">
       <h3 className=" text-3xl font-semibold">{children}</h3>
-      <div> Logos </div>
+      <DrawOutlineButton>See more </DrawOutlineButton>
     </div>
+  );
+};
+
+const DrawOutlineButton = ({ children, ...rest }) => {
+  return (
+    <button
+      {...rest}
+      className="group relative px-4 py-2 font-medium text-slate-100 transition-colors duration-[400ms] hover:text-indigo-300"
+    >
+      <span>{children}</span>
+
+      {/* TOP */}
+      <span className="absolute left-0 top-0 h-[2px] w-0 bg-indigo-300 transition-all duration-100 group-hover:w-full" />
+
+      {/* RIGHT */}
+      <span className="absolute right-0 top-0 h-0 w-[2px] bg-indigo-300 transition-all delay-100 duration-100 group-hover:h-full" />
+
+      {/* BOTTOM */}
+      <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-indigo-300 transition-all delay-200 duration-100 group-hover:w-full" />
+
+      {/* LEFT */}
+      <span className="absolute bottom-0 left-0 h-0 w-[2px] bg-indigo-300 transition-all delay-300 duration-100 group-hover:h-full" />
+    </button>
   );
 };
 

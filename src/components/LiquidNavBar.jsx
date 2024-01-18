@@ -5,7 +5,6 @@ import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 
 const LiquidSideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +34,7 @@ const Nav = ({ isOpen, setIsOpen }) => {
   return (
     <div className="bg-re z-50">
       <motion.nav
-        className="fixed top-0 bottom-0 w-screen bg-white dark:bg-indigo-900"
+        className="fixed top-0 bottom-0 w-screen bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]  dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
         animate={isOpen ? "open" : "closed"}
         variants={navVariants}
         initial="closed"
