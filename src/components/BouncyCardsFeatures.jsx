@@ -20,7 +20,7 @@ const BouncyCardsFeatures = () => {
             href="/projects/taqueria"
           >
             <CardTitle>La Taqueria</CardTitle>
-            <div className=" absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-violet-400 to-indigo-400 p-3 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <div className=" absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl  p-3  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               <div className="relative w-full h-0 pb-[120%]">
                 <Image src="/projects/HeaderTaqueria.png" fill alt="" />
               </div>
@@ -32,7 +32,7 @@ const BouncyCardsFeatures = () => {
             href="/projects/taqueria"
           >
             <CardTitle>Kitchen Flow</CardTitle>
-            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-amber-400 to-orange-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               <div className="relative w-full h-0 pb-[50%]">
                 <Image
                   src="/projects/KitchenFlow_Header.png"
@@ -50,8 +50,15 @@ const BouncyCardsFeatures = () => {
             href="/projects/taqueria"
           >
             <CardTitle>User Dashboard</CardTitle>
-            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-green-400 to-emerald-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <span className="block text-center font-semibold text-emerald-50"></span>
+            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl   [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]  p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              <div className="relative w-full h-0 pb-[50%]">
+                <Image
+                  src="/projects/KF-Dashboard.png"
+                  // Make the image display full width
+                  fill
+                  alt=""
+                />
+              </div>
             </div>
           </BounceCard>
           <BounceCard
@@ -59,8 +66,15 @@ const BouncyCardsFeatures = () => {
             href="/projects/taqueria"
           >
             <CardTitle>Game Dev</CardTitle>
-            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl bg-gradient-to-br from-pink-400 to-red-400 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
-              <span className="block text-center font-semibold text-red-50"></span>
+            <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] p-4  group-hover:translate-y-4 group-hover:rotate-[2deg]">
+              <div className="relative w-full h-0 pb-[50%]">
+                <Image
+                  src="/projects/ZombieGame.png"
+                  // Make the image display full width
+                  fill
+                  alt=""
+                />
+              </div>
             </div>
           </BounceCard>
         </div>

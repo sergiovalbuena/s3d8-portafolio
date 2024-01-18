@@ -49,7 +49,7 @@ const CollapseCard = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-4 py-32">
+        <div className="flex gap-4 py-12">
           {features.map((feat, index) => (
             <Feature {...feat} key={index} position={position} index={index} />
           ))}
