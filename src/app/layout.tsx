@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import LiquidSideNav from "../components/LiquidNavBar";
 import Footer from "../components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   //weight: ["400", "700", "900"],
@@ -13,7 +14,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Sergio Valbuena",
-  description: "portfolio of a web developer, product designer, and artist",
+  description: "portafolio of a web developer, product designer, and 3d artist",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <LiquidSideNav />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

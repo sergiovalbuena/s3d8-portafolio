@@ -53,10 +53,14 @@ const Nav = ({ isOpen, setIsOpen }) => {
           className="flex flex-col gap-4 absolute bottom-8 left-8"
         >
           <NavLink text="Home" href="/" setIsOpen={setIsOpen} />
-          <NavLink text="Projects" href="/projects" setIsOpen={setIsOpen} />
-          <NavLink text="Tools" href="/tools" setIsOpen={setIsOpen} />
-          <NavLink text="Contact" href="/contact" setIsOpen={setIsOpen} />
-          <NavLink text="Blog" href="/blog" setIsOpen={setIsOpen} />
+          <NavLink text="Projects" href="#projects" setIsOpen={setIsOpen} />
+          <NavLink text="Some code" href="#code" setIsOpen={setIsOpen} />
+          <NavLink
+            text="UI Components"
+            href="#ui-components"
+            setIsOpen={setIsOpen}
+          />
+          <NavLink text="Contact" href="#contact" setIsOpen={setIsOpen} />
         </motion.div>
       </motion.nav>
     </div>

@@ -82,10 +82,17 @@ const WaterDropHero = () => {
           </Reveal>
           <Reveal>
             <h2 className="pointer-events-auto my-2 text-2xl text-slate-400 md:my-4 md:text-4xl">
-              Interactive Media <span className="font-bold"> Developer </span>{" "}
+              Interactive Media{" "}
+              <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text font-bold text-transparent">
+                Developer{" "}
+              </span>{" "}
               <br />
               <span className=" text-indigo-500">
-                and Product <span className="font-bold">Designer</span>
+                and Product
+                <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent">
+                  {" "}
+                  <span className="font-bold ml-2"> Designer</span>
+                </span>
               </span>
             </h2>
           </Reveal>
@@ -114,7 +121,7 @@ const WaterDropHero = () => {
                     .querySelector("#contact")
                     .scrollIntoView({ behavior: "smooth" });
                 }}
-                className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 "
+                className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 inline-flex h-12 animate-background-shine items-center justify-center border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%]  focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-slate-50 "
               >
                 Contact me
               </Link>

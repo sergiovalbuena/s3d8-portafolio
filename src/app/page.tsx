@@ -9,8 +9,9 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-
-      <BouncyCardsFeatures />
+      <div id="projects">
+        <BouncyCardsFeatures />
+      </div>
       <DoubleScrollingLogos />
       <CollapseCard />
       <Modal />
