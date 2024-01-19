@@ -52,11 +52,11 @@ const Nav = ({ isOpen, setIsOpen }) => {
           className="flex flex-col gap-4 absolute bottom-8 left-8"
         >
           <NavLink text="Home" href="/" setIsOpen={setIsOpen} />
-          <NavLink text="Projects" href="#projects" setIsOpen={setIsOpen} />
-          <NavLink text="Some code" href="#code" setIsOpen={setIsOpen} />
+          <NavLink text="Projects" href="/#projects" setIsOpen={setIsOpen} />
+          <NavLink text="Some code" href="/#code" setIsOpen={setIsOpen} />
           <NavLink
             text="UI Components"
-            href="#ui-components"
+            href="/#ui-components"
             setIsOpen={setIsOpen}
           />
           <NavLink text="Contact" href="#contact" setIsOpen={setIsOpen} />
@@ -73,7 +73,7 @@ const NavLink = ({ text, href, setIsOpen }) => {
   return (
     <Link href={href}>
       <motion.div
-        className="inline-block z-10 text-slate-800 dark:text-slate-100 w-fit font-black text-7xl hover:text-indigo-500 transition-colors"
+        className="inline-block z-10 text-slate-800 dark:text-slate-100 w-fit font-black md:text-7xl text-3xl hover:text-indigo-500 transition-colors"
         variants={navLinkVariants}
         transition={{
           type: "spring",
