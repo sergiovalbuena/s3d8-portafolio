@@ -102,14 +102,14 @@ export default function laTaqueria() {
                   {link.description}
                 </p>
               </div>
-              <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
+              {/* <div className="rounded-bl-2xl rounded-br-2xl bg-gray-50 p-6 md:px-8">
                 <a
                   href={link.href}
                   className="text-base font-medium text-indigo-700 hover:text-indigo-600"
                 >
                   Contact us<span aria-hidden="true"> &rarr;</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
