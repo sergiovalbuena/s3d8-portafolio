@@ -3,42 +3,39 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FiAlertCircle } from "react-icons/fi";
 import { useState } from "react";
+import Spline from "@splinetool/react-spline";
 
 const ExampleWrapper = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <section className="px-4 py-12 bg-slate-900">
-      <div className="mb-8  flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
-        <h2 className="max-w-lg text-4xl font-bold md:text-5xl text-white ">
-          My own
-          <span className="text-indigo-500"> UI Components</span>
-        </h2>
-        {/* <div className="flex flex-col gap-2">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="whitespace-nowrap rounded-lg bg-slate-900 px-4 py-2 font-medium text-white shadow-xl transition-colors hover:bg-slate-700"
-          >
-            Contact me
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="whitespace-nowrap rounded-lg bg-slate-900 px-4 py-2 font-medium text-white shadow-xl transition-colors hover:bg-slate-700"
-          >
-            Email me
-          </motion.button>
-        </div> */}
-      </div>
+      {/* Sección con Spline como fondo */}
+      <div className="relative py-32">
+        {/* Componente Spline como fondo */}
+        <div className="absolute inset-0 z-0">
+          <Spline scene="https://prod.spline.design/y9dZ0g50fA042F3G/scene.splinecode" />
+        </div>
 
-      <div className="px-4 py-32 bg-slate-900 grid place-content-center">
-        <button
-          onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium px-4 py-2 rounded hover:opacity-90 transition-opacity"
-        >
-          Des&Dev UI Components
-        </button>
-        <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
+        {/* Contenido sobre el fondo Spline */}
+        <div className="relative z-10">
+          <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
+            <h2 className="max-w-lg text-4xl font-bold md:text-5xl text-white">
+              My own
+              <span className="text-indigo-500"> UI Components</span>
+            </h2>
+            {/* ... otros botones si necesitas ... */}
+          </div>
+
+          <div className="grid place-content-center">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium px-4 py-2 rounded hover:opacity-90 transition-opacity"
+            >
+              Des&Dev UI Components
+            </button>
+            <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
+        </div>
       </div>
     </section>
   );
