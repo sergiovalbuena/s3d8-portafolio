@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-// Asegúrate de definir las interfaces para tus props como se mostró anteriormente
 interface Product {
   title: string;
   link: string;
@@ -19,21 +18,14 @@ interface Product {
 
 interface HeroParallaxProps {
   products: Product[];
-  headerTitle: string; // Asegúrate de que estos nombres coincidan con los que usas al pasar las props
+  headerTitle: string;
   headerDescription: string;
 }
-
 export const HeroParallax: React.FC<HeroParallaxProps> = ({
   products,
   headerTitle,
   headerDescription,
-}: {
-  products: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  }[];
-}) => {
+}: HeroParallaxProps) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
