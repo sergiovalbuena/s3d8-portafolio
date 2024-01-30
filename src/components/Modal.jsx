@@ -70,7 +70,7 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
               <p className="text-center mb-6">
                 I&apos;m working on this section with Des &amp; Dev Studio
                 <br />
-                Our plan is to release them on 2024
+                Our plan is to release them on July 2024 🚀
               </p>
               <div className="flex gap-2">
                 {/* <button

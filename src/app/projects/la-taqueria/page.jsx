@@ -50,7 +50,7 @@ export default function laTaqueria() {
         <div className="absolute inset-0">
           <div className="relative  h-full w-full ">
             <Image
-              className=""
+              className="h-full"
               src="/projects/HeaderTaqueria.png"
               fill={true}
               alt=""
