@@ -12,7 +12,7 @@ export default function KitchenflowPage() {
   );
 }
 
-export const products = [
+const products = [
   {
     title: "Moonbeam",
     link: "",
