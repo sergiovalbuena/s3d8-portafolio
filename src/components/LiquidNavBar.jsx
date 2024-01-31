@@ -59,7 +59,7 @@ const Nav = ({ isOpen, setIsOpen }) => {
             href="/#ui-components"
             setIsOpen={setIsOpen}
           />
-          <NavLink text="Contact" href="#contact" setIsOpen={setIsOpen} />
+          <NavLink text="Contact" href="/#contact" setIsOpen={setIsOpen} />
         </motion.div>
       </motion.nav>
     </div>

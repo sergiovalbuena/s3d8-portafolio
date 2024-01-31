@@ -9,12 +9,7 @@ import {
   useMotionValue,
   useMotionValueEvent,
 } from "framer-motion";
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from "../components/SocialIcons";
+import { GitHubIcon, LinkedInIcon } from "../components/SocialIcons";
 import Link from "next/link";
 import Image from "next/image";
 

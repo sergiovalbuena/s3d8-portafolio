@@ -6,7 +6,9 @@ export default function ZombieGamePage() {
       <HeroParallax
         products={products}
         headerTitle="Zombie Game"
-        headerDescription="A zombie game made with Unity."
+        headerDescription="Survive the Apocalypse in Style! Dive into an immersive zombie survival experience crafted in Unity with advanced C# programming. Our game employs cutting-edge game algorithms to ensure each encounter is as thrilling as it is realistic. Get ready for dynamic gameplay and unparalleled user interaction that keeps you on the edge of your seat."
+        githubLink="https://github.com/sergiovalbuena"
+        demoLink="https://youtu.be/zOoT9cAzN1k?si=z5nJ5fZSb24cocGs"
       />
     </div>
   );

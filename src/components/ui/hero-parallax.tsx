@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { GitHubIcon } from "@/components/SocialIcons";
 
 interface Product {
   title: string;
@@ -20,11 +21,15 @@ interface HeroParallaxProps {
   products: Product[];
   headerTitle: string;
   headerDescription: string;
+  githubLink: string;
+  demoLink: string;
 }
 export const HeroParallax: React.FC<HeroParallaxProps> = ({
   products,
   headerTitle,
   headerDescription,
+  githubLink,
+  demoLink,
 }: HeroParallaxProps) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
@@ -66,7 +71,12 @@ export const HeroParallax: React.FC<HeroParallaxProps> = ({
       ref={ref}
       className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
-      <Header title={headerTitle} description={headerDescription} />
+      <Header
+        title={headerTitle}
+        description={headerDescription}
+        githubLink={githubLink}
+        demoLink={demoLink}
+      />
       <motion.div
         style={{
           rotateX,
@@ -108,18 +118,35 @@ export const HeroParallax: React.FC<HeroParallaxProps> = ({
   );
 };
 
-export const Header: React.FC<{ title: string; description: string }> = ({
-  title,
-  description,
-}) => {
+export const Header: React.FC<{
+  title: string;
+  description: string;
+  githubLink: string;
+  demoLink: string;
+}> = ({ title, description, githubLink, demoLink }) => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        {title}
+        <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text text-2xl md:text-7xl font-bold text-transparent">
+          {title}
+        </span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         {description}
       </p>
+      <div className="flex gap-5 mt-6">
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          <button className="inline-flex h-12 animate-background-shine items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            GitHub
+          </button>
+        </a>
+
+        <a href={demoLink} target="_blank" rel="noopener noreferrer">
+          <button className="inline-flex h-12 animate-background-shine items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-300 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            Demo
+          </button>
+        </a>
+      </div>
     </div>
   );
 };

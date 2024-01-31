@@ -6,7 +6,9 @@ export default function KitchenflowPage() {
       <HeroParallax
         products={products}
         headerTitle="Kitchen Flow"
-        headerDescription="A kitchen management system for restaurants and food businesses."
+        headerDescription="Revolutionizing Culinary Operations! Powered by cutting-edge technologies and innovative design thinking, Kitchen Flow is the ultimate kitchen management solution. Streamline your restaurant or food business with our platform, developed using expert skills in NextJS, Node.js, Agile methodologies, and UI/UX design for efficiency like never before."
+        githubLink="https://github.com/sergiovalbuena"
+        demoLink="https://kitchenflow.ca/"
       />
     </div>
   );
@@ -72,7 +74,7 @@ const products = [
   },
 
   {
-    title: "Recipes employee View",
+    title: "Updating Task",
     link: "",
     thumbnail: "/projects/kf/kf12.png",
   },
