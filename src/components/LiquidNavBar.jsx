@@ -3,11 +3,23 @@
 import { useState } from "react";
 import { FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 
 const LiquidSideNav = () => {
+  const { scrollY } = useScroll();
   const [isOpen, setIsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+    // console.log(latest)
+  });
 
   return (
     <div className="fixed top-0 w-full z-20">
@@ -16,6 +28,12 @@ const LiquidSideNav = () => {
           {/* <span className="text-sm">Open nav</span>
           <FiArrowRight className="mr-4 ml-2" /> */}
           <motion.button
+            variants={{
+              visible: { y: 0 },
+              hidden: { y: "-200%" },
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             whileHover={{ y: 3 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}

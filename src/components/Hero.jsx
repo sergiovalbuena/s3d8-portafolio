@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import anime from "animejs";
 import {
   useAnimation,
   useInView,
@@ -68,7 +67,7 @@ const WaterDropHero = () => {
       <div className="flex flex-col md:flex-row xl:flex-row relative mx-auto max-w-7xl gap-8">
         <div className="pointer-events-none relative z-10">
           <Reveal>
-            <h1 className="pointer-events-auto text-5xl font-black text-slate-100 md:text-7xl">
+            <h1 className="pointer-events-auto text-5xl font-black text-slate-100 md:text-7xl py-5">
               Hi, {""}
               <span className="text-4xl">👋🏼</span>
               <span className="text-6xl">👨🏻‍💻</span> <br />
@@ -122,7 +121,7 @@ const WaterDropHero = () => {
               </Link>
               <Link
                 href="mailto:jesergio.valbuena@gmail.com "
-                className="pointer-events-auto  rounded bg-indigo-600 px-4 py-2 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 "
+                className="pointer-events-auto  rounded bg-indigo-600 px-4 pt-2.5 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 "
               >
                 Email me
               </Link>
