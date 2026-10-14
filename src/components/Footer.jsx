@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="flex gap-6 text-sm font-medium text-zinc-800 dark:text-slate-700">
                 <NavLink href="/#projects">Projects</NavLink>
                 <NavLink href="/#code">Some Code</NavLink>
-                <NavLink href="/#ui-components">UI Components</NavLink>
+                <NavLink href="/#creative-coding">Creative Coding</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Sergio Valbuena. All rights

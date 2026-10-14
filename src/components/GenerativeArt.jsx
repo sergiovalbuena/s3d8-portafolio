@@ -8,13 +8,13 @@ const REPO_URL = "https://github.com/sergiovalbuena/javascript_art/tree/master";
 
 const GenerativeArt = () => {
   return (
-    <section className="overflow-hidden px-4 py-12">
+    <section className="overflow-hidden bg-gradient-to-b from-blue-950 to-blue-900 px-4 py-16">
       <div className="mx-auto max-w-8xl lg:px-10">
         <div className="mb-8">
-          <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl text-slate-800 dark:text-white">
-            Creative coding <span className="text-indigo-500">with canvas</span>
+          <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl text-white">
+            Creative coding <span className="text-sky-400">with canvas</span>
           </h2>
-          <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-300">
+          <p className="mt-3 max-w-2xl text-blue-100">
             Generative sketches written in vanilla JavaScript and the Canvas
             API. They run live here; regenerate them for a new variation.
           </p>
@@ -38,10 +38,10 @@ const SketchCard = ({ sketch }) => {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-600"
+      className="overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15"
     >
       <SketchCanvas key={seed} sketch={sketch} />
-      <div className="p-5 dark:text-slate-200">
+      <div className="p-5 text-white">
         <div className="flex items-center justify-between gap-2">
           <h3 className="text-xl font-semibold">{sketch.title}</h3>
           <div className="flex gap-1">
@@ -49,7 +49,7 @@ const SketchCard = ({ sketch }) => {
               onClick={() => setSeed((s) => s + 1)}
               aria-label={`Regenerate ${sketch.title}`}
               title="Regenerate"
-              className="rounded-md p-2 text-slate-500 transition-colors hover:bg-slate-200 hover:text-indigo-500 dark:text-slate-200 dark:hover:bg-slate-500"
+              className="rounded-md p-2 text-blue-100 transition-colors hover:bg-white/15 hover:text-sky-300"
             >
               <FiRefreshCw />
             </button>
@@ -59,13 +59,13 @@ const SketchCard = ({ sketch }) => {
               rel="noreferrer"
               aria-label={`Source code of ${sketch.title}`}
               title="Source code"
-              className="rounded-md p-2 text-slate-500 transition-colors hover:bg-slate-200 hover:text-indigo-500 dark:text-slate-200 dark:hover:bg-slate-500"
+              className="rounded-md p-2 text-blue-100 transition-colors hover:bg-white/15 hover:text-sky-300"
             >
               <FiGithub />
             </a>
           </div>
         </div>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+        <p className="mt-1 text-sm text-blue-100/80">
           {sketch.description}
         </p>
       </div>

@@ -1,7 +1,6 @@
 import Hero from "../components/Hero";
 import BouncyCardsFeatures from "../components/BouncyCardsFeatures";
 import ContactForm from "../components/ContactForm";
-import Modal from "../components/Modal";
 import DoubleScrollingLogos from "../components/DoubleScrollingLogos";
 import CollapseCard from "../components/CollapseCards";
 import GenerativeArt from "../components/GenerativeArt";
@@ -19,9 +18,6 @@ export default function Home() {
       </div>
       <div id="creative-coding">
         <GenerativeArt />
-      </div>
-      <div id="ui-components">
-        <Modal />
       </div>
       <div id="contact">
         <ContactForm />
