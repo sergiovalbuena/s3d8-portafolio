@@ -120,7 +120,7 @@ const WaterDropHero = () => {
                 Contact me
               </Link>
               <Link
-                href="mailto:jesergio.valbuena@gmail.com "
+                href="mailto:iosergio.valbuena@gmail.com"
                 className="pointer-events-auto  rounded bg-indigo-600 px-4 pt-2.5 font-medium text-slate-100 transition-all hover:bg-indigo-700 active:scale-95 "
               >
                 Email me

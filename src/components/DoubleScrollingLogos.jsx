@@ -3,25 +3,26 @@
 import { motion } from "framer-motion";
 import {
   SiJavascript,
-  SiAdobephotoshop,
-  SiCsharp,
-  SiAdobecreativecloud,
+  SiDotnet,
+  SiNextdotjs,
+  SiTypescript,
   SiFigma,
   SiSwift,
-  SiCss3,
+  SiCss,
   SiUnity,
   SiTailwindcss,
   SiNodedotjs,
   SiReact,
   SiVite,
-  SiHeroku,
+  SiSupabase,
+  SiVercel,
   SiGit,
   SiMongodb,
   SiGithub,
   SiDigitalocean,
-  SiAdobexd,
+  SiStripe,
   SiBlender,
-  SiAdobeillustrator,
+  SiPrisma,
 } from "react-icons/si";
 
 const DoubleScrollingLogos = () => {
@@ -96,10 +97,10 @@ const LogoItem = ({ Icon }) => {
 const LogoItemsTop = () => (
   <>
     <LogoItem Icon={SiJavascript} />
-    <LogoItem Icon={SiCsharp} />
+    <LogoItem Icon={SiDotnet} />
     <LogoItem Icon={SiFigma} />
     <LogoItem Icon={SiSwift} />
-    <LogoItem Icon={SiCss3} />
+    <LogoItem Icon={SiCss} />
     <LogoItem Icon={SiUnity} />
     <LogoItem Icon={SiTailwindcss} />
     <LogoItem Icon={SiVite} />
@@ -110,16 +111,17 @@ const LogoItemsTop = () => (
 
 const LogoItemsBottom = () => (
   <>
-    <LogoItem Icon={SiAdobephotoshop} />
+    <LogoItem Icon={SiNextdotjs} />
     <LogoItem Icon={SiGit} />
-    <LogoItem Icon={SiAdobecreativecloud} />
+    <LogoItem Icon={SiTypescript} />
     <LogoItem Icon={SiDigitalocean} />
-    <LogoItem Icon={SiAdobexd} />
+    <LogoItem Icon={SiSupabase} />
     <LogoItem Icon={SiBlender} />
     <LogoItem Icon={SiGithub} />
-    <LogoItem Icon={SiAdobeillustrator} />
-    <LogoItem Icon={SiHeroku} />
+    <LogoItem Icon={SiStripe} />
+    <LogoItem Icon={SiVercel} />
     <LogoItem Icon={SiMongodb} />
+    <LogoItem Icon={SiPrisma} />
   </>
 );
 
