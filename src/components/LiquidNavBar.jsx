@@ -28,12 +28,9 @@ const LiquidSideNav = () => {
           {/* <span className="text-sm">Open nav</span>
           <FiArrowRight className="mr-4 ml-2" /> */}
           <motion.button
-            variants={{
-              visible: { y: 0 },
-              hidden: { y: "-200%" },
-            }}
+            variants={buttonVariants}
             animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
             whileHover={{ y: 3 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
@@ -143,4 +140,9 @@ const linkWrapperVariants = {
 const navLinkVariants = {
   open: { x: 0 },
   closed: { x: 25 },
+};
+
+const buttonVariants = {
+  visible: { y: 0 },
+  hidden: { y: "-200%" },
 };
