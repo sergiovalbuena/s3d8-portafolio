@@ -76,30 +76,29 @@ const WaterDropHero = () => {
           </Reveal>
           <Reveal>
             <h2 className="pointer-events-auto my-2 text-2xl text-slate-400 md:my-4 md:text-4xl">
-              Interactive Media{" "}
+              Design{" "}
               <span className="inline-flex animate-background-shine bg-[linear-gradient(110deg,#939393,45%,#1e293b,55%,#939393)] bg-[length:250%_100%] bg-clip-text font-bold text-transparent">
-                Developer{" "}
+                Engineer{" "}
               </span>{" "}
               <br />
               <span className=" text-indigo-500">
                 and Product
                 <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent">
                   {" "}
-                  <span className="font-bold ml-2"> Designer</span>
+                  <span className="font-bold ml-2"> Builder</span>
                 </span>
               </span>
             </h2>
           </Reveal>
           <Reveal>
             <p className="pointer-events-auto max-w-xl text-sm text-slate-400 md:text-base">
-              I&apos;ve spent years crafting digital wonders and scaling
-              projects for some cool companies. Whether it&apos;s weaving
-              intricate code tapestries in ReactJS or sculpting delightful UI
-              experiences in Figma, my journey is a fusion of creativity and
-              precision. When I&apos;m not immersed in the world of coding and
-              creating, I&apos;m decodign my inner self as a yoga instructor,
-              connecting mind and body. Let&apos;s join our skills and create
-              something extraordinary together.
+              I design and build web products end to end, from the first Figma
+              frame to a deployed app with auth, payments and real users.
+              Lately that means full-stack apps with Next.js, Supabase and
+              Stripe: a language-learning platform, a football league manager
+              and a World Cup prediction game. I also write generative art with
+              JavaScript and canvas, because code can be playful too.
+              Let&apos;s build something together.
             </p>
             <p className="pointer-events-auto max-w-xl  mt-3 text-md text-slate-200 md:text-base">
               Ready to embark on this product odyssey?
@@ -178,7 +177,7 @@ const WaterDropHero = () => {
             <Card
               imgUrl="/logos/arduino-logo.svg"
               testimonial="Arduino"
-              author="My first 🤍 touch wih code"
+              author="My first 🤍 touch with code"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[1]}
@@ -188,7 +187,7 @@ const WaterDropHero = () => {
             <Card
               imgUrl="/logos/figma-logo.svg"
               testimonial="Figma"
-              author="Design is my fundation"
+              author="Design is my foundation"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[2]}
@@ -218,7 +217,7 @@ const WaterDropHero = () => {
             <Card
               imgUrl="/logos/react-logo.svg"
               testimonial="react"
-              author="My I can do everything framework"
+              author="My do-everything framework"
               handleDragEnd={handleDragEnd}
               dragProgress={dragProgress}
               position={order[5]}

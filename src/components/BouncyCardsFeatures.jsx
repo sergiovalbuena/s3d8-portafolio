@@ -47,16 +47,16 @@ const BouncyCardsFeatures = () => {
         <div className="mb-4 grid grid-cols-12 gap-4">
           <BounceCard
             className="col-span-12 md:col-span-8"
-            href="/projects/kitchen-flow"
+            href="https://king-of-court.vercel.app"
           >
-            <CardTitle>User Dashboard</CardTitle>
+            <CardTitle>King of Court</CardTitle>
             <div className="absolute bottom-0 left-4 right-4 top-20 translate-y-8 rounded-t-2xl   [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]  p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[2deg]">
               <div className="relative w-full h-0 pb-[50%]">
                 <Image
-                  src="/projects/KF-Dashboard.png"
+                  src="/projects/KingOfCourt_Header.jpg"
                   // Make the image display full width
                   fill
-                  alt=""
+                  alt="King of Court landing page"
                 />
               </div>
             </div>
