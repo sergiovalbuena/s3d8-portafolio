@@ -10,7 +10,38 @@ import {
 } from "framer-motion";
 import { GitHubIcon, LinkedInIcon } from "../components/SocialIcons";
 import Link from "next/link";
-import Image from "next/image";
+import {
+  SiAndroid,
+  SiAnthropic,
+  SiArduino,
+  SiAutodesk,
+  SiBlender,
+  SiDotnet,
+  SiExpo,
+  SiFigma,
+  SiFramer,
+  SiHuggingface,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiProcessingfoundation,
+  SiPython,
+  SiRaspberrypi,
+  SiReact,
+  SiShadcnui,
+  SiStripe,
+  SiSupabase,
+  SiSwift,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiTypescript,
+  SiUnity,
+  SiVercel,
+  SiXcode,
+} from "react-icons/si";
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
@@ -164,86 +195,17 @@ const WaterDropHero = () => {
             whileTap={{ scale: 0.985 }}
             className="relative h-[450px] w-[350px]"
           >
-            <Card
-              imgUrl="/logos/js-logo.svg"
-              testimonial="JavaScript"
-              author="My first coding language"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[0]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
-            <Card
-              imgUrl="/logos/arduino-logo.svg"
-              testimonial="Arduino"
-              author="My first 🤍 touch with code"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[1]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
-            <Card
-              imgUrl="/logos/figma-logo.svg"
-              testimonial="Figma"
-              author="Design is my foundation"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[2]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
-            {/* <Card
-              imgUrl="/logos/mongo-logo.svg"
-              testimonial="MongoDB"
-              author="My first Database"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[3]}
-              dragging={dragging}
-              setDragging={setDragging}
-            /> */}
-            <Card
-              imgUrl="/logos/nextjs-logo.svg"
-              testimonial="Next.js"
-              author="my favorite fullstack framework"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[4]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
-            <Card
-              imgUrl="/logos/react-logo.svg"
-              testimonial="react"
-              author="My do-everything framework"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[5]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
-            <Card
-              imgUrl="/logos/unity-logo.svg"
-              testimonial="Unity"
-              author="Interactivity is my passion"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[6]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
-            <Card
-              imgUrl="/logos/swiftui-logo.svg"
-              testimonial="Swift UI"
-              author="My first mobile framework"
-              handleDragEnd={handleDragEnd}
-              dragProgress={dragProgress}
-              position={order[3]}
-              dragging={dragging}
-              setDragging={setDragging}
-            />
+            {TOPICS.map((topic, i) => (
+              <Card
+                key={topic.title}
+                {...topic}
+                handleDragEnd={handleDragEnd}
+                dragProgress={dragProgress}
+                position={order[i]}
+                dragging={dragging}
+                setDragging={setDragging}
+              />
+            ))}
           </motion.div>
         </div>
       </div>
@@ -295,10 +257,10 @@ export const Reveal = ({ children }) => {
 const Card = ({
   handleDragEnd,
   dragProgress,
-  testimonial,
   position,
-  imgUrl,
-  author,
+  title,
+  tagline,
+  tools,
   setDragging,
   dragging,
 }) => {
@@ -395,25 +357,109 @@ const Card = ({
       transition={{
         duration: 0.35,
       }}
-      className={`absolute left-0 top-0 grid h-[450px] w-[350px] select-none place-content-center space-y-6 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md ${
+      className={`absolute left-0 top-0 grid h-[450px] w-[350px] select-none content-center space-y-8 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md ${
         draggable ? "cursor-grab active:cursor-grabbing" : ""
       }`}
     >
-      <Image
-        src={imgUrl}
-        alt={`Image of ${author}`}
-        width={"190"}
-        height={"100"}
-        className="pointer-events-none mx-auto h-42 w-42 object-cover"
-      />
-      <span className="text-center text-lg italic text-slate-400">
-        {testimonial}
-      </span>
-      <span className="text-center text-sm font-medium text-indigo-400">
-        {author}
-      </span>
+      <div className="text-center">
+        <h3 className="text-2xl font-bold text-slate-100">{title}</h3>
+        <p className="mt-1 text-sm font-medium text-indigo-400">{tagline}</p>
+      </div>
+      <ul className="grid grid-cols-3 gap-x-2 gap-y-5">
+        {tools.map(({ name, Icon, color }) => (
+          <li key={name} className="flex flex-col items-center gap-2">
+            <Icon
+              aria-hidden
+              className="pointer-events-none h-11 w-11"
+              style={{ color }}
+            />
+            <span className="text-center text-xs text-slate-400">{name}</span>
+          </li>
+        ))}
+      </ul>
     </motion.div>
   );
 };
+
+// Brand colors; black/dark logos use a light tone so they read on the dark card
+const TOPICS = [
+  {
+    title: "Web",
+    tagline: "My favorite place to build",
+    tools: [
+      { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "React", Icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", Icon: SiNextdotjs, color: "#F1F5F9" },
+      { name: "Tailwind", Icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
+    ],
+  },
+  {
+    title: "Backend & Data",
+    tagline: "Auth, payments and real users",
+    tools: [
+      { name: "Node.js", Icon: SiNodedotjs, color: "#5FA04E" },
+      { name: "Supabase", Icon: SiSupabase, color: "#3FCF8E" },
+      { name: "PostgreSQL", Icon: SiPostgresql, color: "#699ECA" },
+      { name: "Prisma", Icon: SiPrisma, color: "#F1F5F9" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      { name: "Stripe", Icon: SiStripe, color: "#8C83FF" },
+    ],
+  },
+  {
+    title: "Games & 3D",
+    tagline: "Interactivity is my passion",
+    tools: [
+      { name: "Unity", Icon: SiUnity, color: "#F1F5F9" },
+      { name: "C# / .NET", Icon: SiDotnet, color: "#9B7BE0" },
+      { name: "Blender", Icon: SiBlender, color: "#E87D0D" },
+      { name: "3ds Max", Icon: SiAutodesk, color: "#0696D7" },
+      { name: "Three.js", Icon: SiThreedotjs, color: "#F1F5F9" },
+    ],
+  },
+  {
+    title: "Interactive",
+    tagline: "My first touch with code",
+    tools: [
+      { name: "Processing", Icon: SiProcessingfoundation, color: "#4D8FE0" },
+      { name: "Arduino", Icon: SiArduino, color: "#00979D" },
+      { name: "Raspberry Pi", Icon: SiRaspberrypi, color: "#E5326B" },
+      { name: "Creative JS", Icon: SiJavascript, color: "#F7DF1E" },
+    ],
+  },
+  {
+    title: "Mobile",
+    tagline: "Apps in your pocket",
+    tools: [
+      { name: "Swift", Icon: SiSwift, color: "#F05138" },
+      { name: "Xcode", Icon: SiXcode, color: "#1C8CF5" },
+      { name: "Android", Icon: SiAndroid, color: "#3DDC84" },
+      { name: "React Native", Icon: SiReact, color: "#61DAFB" },
+      { name: "Expo", Icon: SiExpo, color: "#F1F5F9" },
+    ],
+  },
+  {
+    title: "Design",
+    tagline: "Design is my foundation",
+    tools: [
+      { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
+      { name: "Framer", Icon: SiFramer, color: "#0099FF" },
+      { name: "shadcn/ui", Icon: SiShadcnui, color: "#F1F5F9" },
+      { name: "Tailwind", Icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Blender", Icon: SiBlender, color: "#E87D0D" },
+    ],
+  },
+  {
+    title: "AI",
+    tagline: "Products that think",
+    tools: [
+      { name: "Claude", Icon: SiAnthropic, color: "#D97757" },
+      { name: "Hugging Face", Icon: SiHuggingface, color: "#FFD21E" },
+      { name: "Python", Icon: SiPython, color: "#4B8BBE" },
+      { name: "Vercel AI", Icon: SiVercel, color: "#F1F5F9" },
+    ],
+  },
+];
 
 export default WaterDropHero;
