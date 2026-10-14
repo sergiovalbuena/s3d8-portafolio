@@ -123,7 +123,7 @@ const TerminalBody = ({ containerRef, inputRef }) => {
 const InitialText = () => {
   return (
     <>
-      <p>Hey there! I am excited to be in conntact with you 🔗</p>
+      <p>Hey there! I am excited to be in contact with you 🔗</p>
       <p className="whitespace-nowrap overflow-hidden font-light">
         ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
       </p>
@@ -171,21 +171,33 @@ const CurrentQuestion = ({ curQuestion }) => {
 };
 
 const Summary = ({ questions, setQuestions }) => {
-  const [complete, setComplete] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [error, setError] = useState("");
 
   const handleReset = () => {
     setQuestions((pv) => pv.map((q) => ({ ...q, value: "", complete: false })));
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     const formData = questions.reduce((acc, val) => {
       return { ...acc, [val.key]: val.value };
     }, {});
 
-    // Send this data to your server or whatever :)
-    console.log(formData);
-
-    setComplete(true);
+    setStatus("sending");
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Couldn't send the message");
+      setStatus("sent");
+    } catch (err) {
+      setError(err.message);
+      setStatus("error");
+    }
   };
 
   return (
@@ -198,27 +210,36 @@ const Summary = ({ questions, setQuestions }) => {
           </p>
         );
       })}
-      <p>Does it look goo?, ready to send it?</p>
-      {complete ? (
+      <p>Does it look good? Ready to send it?</p>
+      {status === "sent" ? (
         <p className="text-emerald-300">
           <FiCheckCircle className="inline-block mr-2" />
           <span>Sent! I&#39;ll get back to you ASAP 😎</span>
         </p>
       ) : (
-        <div className="flex gap-2 mt-2">
-          <button
-            onClick={handleReset}
-            className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-slate-100 text-black"
-          >
-            Restart
-          </button>
-          <button
-            onClick={handleSend}
-            className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-indigo-500 text-white"
-          >
-            Send it!
-          </button>
-        </div>
+        <>
+          {status === "error" && (
+            <p className="text-red-400">
+              ✗ {error}. Try again or write to sergio@desndev.com
+            </p>
+          )}
+          <div className="flex gap-2 mt-2">
+            <button
+              onClick={handleReset}
+              disabled={status === "sending"}
+              className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-slate-100 text-black disabled:opacity-50"
+            >
+              Restart
+            </button>
+            <button
+              onClick={handleSend}
+              disabled={status === "sending"}
+              className="px-3 py-1 text-base hover:opacity-90 transition-opacity rounded bg-indigo-500 text-white disabled:opacity-50"
+            >
+              {status === "sending" ? "Sending..." : "Send it!"}
+            </button>
+          </div>
+        </>
       )}
     </>
   );
