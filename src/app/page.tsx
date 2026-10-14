@@ -4,6 +4,7 @@ import ContactForm from "../components/ContactForm";
 import Modal from "../components/Modal";
 import DoubleScrollingLogos from "../components/DoubleScrollingLogos";
 import CollapseCard from "../components/CollapseCards";
+import GenerativeArt from "../components/GenerativeArt";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       <DoubleScrollingLogos />
       <div id="code">
         <CollapseCard />
+      </div>
+      <div id="creative-coding">
+        <GenerativeArt />
       </div>
       <div id="ui-components">
         <Modal />

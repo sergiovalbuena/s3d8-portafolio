@@ -70,6 +70,11 @@ const Nav = ({ isOpen, setIsOpen }) => {
           <NavLink text="Projects" href="/#projects" setIsOpen={setIsOpen} />
           <NavLink text="Some code" href="/#code" setIsOpen={setIsOpen} />
           <NavLink
+            text="Creative coding"
+            href="/#creative-coding"
+            setIsOpen={setIsOpen}
+          />
+          <NavLink
             text="UI Components"
             href="/#ui-components"
             setIsOpen={setIsOpen}
